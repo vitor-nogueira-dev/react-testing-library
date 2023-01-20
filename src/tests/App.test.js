@@ -5,7 +5,7 @@ import { act } from 'react-dom/test-utils';
 import App from '../App';
 import renderWithRouter from '../renderWithRouter';
 
-describe('', () => {
+describe('Testando o componente App', () => {
   it('Teste se o topo da aplicação contém um conjunto fixo de links de navegação', () => {
     renderWithRouter(<App />);
     const LINK_HOME = screen.getByRole('link', {
