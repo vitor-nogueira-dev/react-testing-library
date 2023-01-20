@@ -56,10 +56,4 @@ describe('Testando o componente Pokemon', () => {
     expect(IMG_ICON.src).toContain(SRC_ICON);
     expect(IMG_ICON).toHaveAttribute('src', SRC_ICON);
   });
-  it('', () => {
-
-  });
-  it('', () => {
-
-  });
 });

@@ -35,5 +35,32 @@ describe('Testando o component Favorite Pokémon', () => {
       name: /pikachu is marked as favorite/i,
     });
     expect(FAVORITE_POKEMON).toBeInTheDocument();
+
+    // userEvent.click(CHECK_BOX_FAVORITE);
+    // expect(FAVORITE_POKEMON).not.toBeInTheDocument();
+  });
+  it('Testando se é possível desmarcar o um Pokemon Favorito', () => {
+    renderWithRouter(<App />);
+
+    const LINK_DETAILS = screen.getByRole('link', {
+      name: /more details/i,
+    });
+    userEvent.click(LINK_DETAILS);
+
+    const CHECK_BOX_FAVORITE = screen.getByRole('checkbox', {
+      name: /pokémon favoritado\?/i,
+    });
+    const IMG_ICON = screen.getByRole('img', {
+      name: 'Pikachu is marked as favorite',
+    });
+    const SRC_ICON = '/star-icon.svg';
+    expect(IMG_ICON).toBeInTheDocument();
+    expect(IMG_ICON.src).toContain(SRC_ICON);
+    expect(IMG_ICON).toHaveAttribute('src', SRC_ICON);
+
+    console.log(CHECK_BOX_FAVORITE.checked);
+    expect(CHECK_BOX_FAVORITE).toBeInTheDocument();
+    userEvent.click(CHECK_BOX_FAVORITE);
+    expect(IMG_ICON).not.toBeInTheDocument();
   });
 });
