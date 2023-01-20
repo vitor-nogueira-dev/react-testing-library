@@ -3,7 +3,6 @@ import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import App from '../App';
 import renderWithRouter from '../renderWithRouter';
-// import pokemonList from '../data';
 
 describe('Testando o componente Pokedex', () => {
   it('Teste se a página contém um heading h2 com o texto Encountered Pokémon', () => {
